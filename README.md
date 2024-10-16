@@ -1,4 +1,4 @@
-# Manual Testing Project: Registration Form Validation
+# Manual Testing on Registration Page
 
 This repository contains manual testing documents for a registration form, showing step-by-step testing and how issues are tracked. It includes clear test cases, bug reports, and summary reports. Both positive and negative scenarios are covered, with results marked as Passed, Failed, or Warning to reflect real-life testing.
 
@@ -28,4 +28,25 @@ This repository contains manual testing documents for a registration form, showi
 |------------|---------------|------------------|--------------|--------------|------------|----------------|------------------------|--------------------|------------------|----------------|-------------|
 | **BUG_001** | Error message not displayed for short username | TC_02 | Medium | High | Open | The error message for usernames shorter than 5 characters is not showing. | 1. Open registration page<br>2. Enter `usr` as username<br>3. Click Submit | Error: "Username must be at least 5 characters" | No error message displayed | Dev Team | Validation issue |
 | **BUG_002** | Username accepted despite exceeding character limit | TC_03 | High | High | Open | Username with more than 15 characters is accepted even though an error message is shown. | 1. Open registration page<br>2. Enter `verylongusername12345` as username<br>3. Click Submit | Error: "Username must not exceed 15 characters" and form blocked | Form accepted input | Dev Team | Backend validation missing |
+---
+
+# **Test Execution Summary Report**
+
+| **Total Test Cases** | **Passed** | **Failed** | **Warning** | **Blocked** |
+|----------------------|------------|------------|-------------|-------------|
+| 20                   | 13         | 4          | 3           | 0           |
+
+## Defects Summary
+
+| **Total Defects Found** | **Critical** | **High** | **Medium** | **Low** |
+|-------------------------|--------------|----------|------------|---------|
+| 6                       | 2            | 2        | 1          | 1       |
+
+---
+# **Recommendation**
+- Apply robust validation for password requirements, ensuring compliance with minimum length and digit inclusion rules.  
+- Correct backend logic to reject usernames exceeding 15 characters.  
+- Ensure the Terms and Conditions checkbox remains editable after form submission.  
+- Enhance the Country Dropdown functionality to preserve the selected value upon resubmission.
+
 ---
